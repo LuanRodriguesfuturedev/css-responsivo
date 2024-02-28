@@ -1,0 +1,212 @@
+/* Define o modelo de caixa border-box para todos os elementos, zera o preenchimento e a margem padrão e define a fonte Roboto como padrão */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Estilos para o container */
+.container {
+    max-width: 1024px; /* Largura máxima */
+    width: 100%; /* Largura total */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilos para o cabeçalho dentro do container */
+header .container {
+    display: flex; /* Exibição flexível */
+    justify-content: space-between; /* Alinhamento dos itens à esquerda e à direita */
+    align-items: center; /* Alinhamento vertical ao centro */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    padding: 16px 0 0; /* Preenchimento superior */
+    border-bottom: 1px solid #ccc; /* Borda inferior */
+    margin-bottom: 56px; /* Margem inferior */
+}
+
+/* Estilos para o submenu */
+.submenu {
+    display: none; /* Ocultar submenu por padrão */
+    border: 1px solid red; /* Borda vermelha */
+    background-color: #fff; /* Cor de fundo branca */
+    position: absolute; /* Posicionamento absoluto */
+    left: 0; /* Alinhamento à esquerda */
+    width: 300px; /* Largura */
+    top: 100%; /* Distância do topo */
+}
+
+/* Estilos para os itens do menu principal */
+.menu>li {
+    float: left; /* Flutuação para a esquerda */
+    list-style: none; /* Remoção do estilo de lista */
+    padding: 16px; /* Preenchimento */
+    border-top: 4px solid transparent; /* Borda superior transparente */
+    position: relative; /* Posicionamento relativo */
+}
+
+/* Limpar floats */
+.clear {
+    clear: both;
+}
+
+/* Mostrar submenu ao passar o mouse */
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* Estilos para os itens do menu ao passar o mouse */
+.menu li:hover {
+    border-color: red; /* Borda vermelha */
+}
+
+/* Estilos para os itens do submenu */
+.submenu li {
+    display: block; /* Exibição em bloco */
+    padding: 8px; /* Preenchimento */
+}
+
+/* Estilos para o conteúdo principal */
+.conteudo {
+    display: grid; /* Exibição em grid */
+    grid-template-columns: 70% 30%; /* Layout com duas colunas */
+}
+
+/* Estilos para a imagem das notícias */
+.noticia img {
+    max-width: 100%; /* Largura máxima de 100% */
+}
+
+/* Estilos para a seção de destaque */
+.destaque {
+    margin-bottom: 56px; /* Margem inferior */
+}
+
+/* Estilos para os artigos de notícia dentro da seção de destaque */
+.destaque .noticia a {
+    display: flex; /* Exibição flexível */
+    font-size: 2em; /* Tamanho da fonte */
+}
+
+.destaque .noticia img {
+    margin-right: 8px; /* Margem à direita */
+}
+
+/* Estilos para os títulos das seções */
+section h2 {
+    margin-bottom: 32px; /* Margem inferior */
+}
+
+/* Estilos para a seção lateral */
+aside {
+    padding-left: 40px; /* Preenchimento à esquerda */
+}
+
+/* Estilos para os artigos de notícia na seção lateral */
+aside .noticia {
+    margin-bottom: 24px; /* Margem inferior */
+}
+
+/* Estilos para o layout de grade das notícias */
+.noticias {
+    display: grid; /* Exibição em grid */
+    grid-template-columns: repeat(3, 32.6%); /* Layout com três colunas */
+    column-gap: 1%; /* Espaçamento entre colunas */
+    row-gap: 5%; /* Espaçamento entre linhas */
+}
+
+/* Media query para telas menores que 768px */
+@media screen and (max-width: 767px) {
+    /* Alterações de layout para telas menores */
+    .conteudo {
+        display: block; /* Exibição em bloco */
+    }
+
+    .container{
+        max-width: 90%; /* Largura máxima */
+    }
+
+    .destaque .noticia a {
+        display: block; /* Exibição em bloco */
+        font-size: 1.5em; /* Tamanho da fonte */
+    }
+
+    .destaque .noticia img {
+        margin-right: 0px; /* Remoção da margem à direita */
+    }
+
+    .noticias {
+        display: block; /* Exibição em bloco */
+    }
+
+    .noticias .noticia {
+        margin-bottom: 32px; /* Margem inferior */
+    }
+
+    aside {
+        padding-left: 0px; /* Remoção do preenchimento à esquerda */
+    }
+
+    header div.container {
+        flex-direction: column; /* Alteração da direção do flexbox para coluna */
+    }
+
+    .submenu {
+        display: block; /* Exibição do submenu */
+        width: 100%; /* Largura total */
+        position: relative; /* Posicionamento relativo */
+        border: none; /* Remoção da borda */
+    }
+
+    .menu {
+        display: none; /* Ocultar o menu */
+    }
+
+    .menu>li {
+        clear: both; /* Limpar floats */
+    }
+
+    .submenu li {
+        display: block; /* Exibição em bloco */
+        padding: 8px; /* Preenchimento */
+    }
+
+    .btn-menu {
+        display: flex; /* Exibição flexível */
+        justify-content: center; /* Alinhamento centralizado */
+        margin-top: 16px; /* Margem superior */
+        padding-bottom: 16px; /* Preenchimento inferior */
+    }
+
+    .btn-menu button {
+        padding: 8px; /* Preenchimento */
+    }
+}
+
+/* Media query para telas maiores que 767px e menores que 1024px */
+@media screen and (min-width:768px) and (max-width:1023px){
+    .container{
+        max-width: 90%; /* Largura máxima */
+    }
+
+    .btn-menu{
+        display: none; /* Ocultar o botão de menu */
+    }
+
+    .destaque .noticia a{
+        font-size: 1.5em; /* Tamanho da fonte */
+    }
+
+    .noticias{
+        grid-template-columns: repeat(2, 49%); /* Layout com duas colunas */
+    }
+}
+
+/* Media query para telas maiores ou iguais a 1024px */
+@media screen and (min-width:1024px) {
+    .btn-menu{
+        display: none; /* Ocultar o botão de menu */
+    }
+}
